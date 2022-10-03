@@ -8,11 +8,16 @@ import { PokeApiService } from 'src/app/service/poke-api.service';
 })
 export class PokeListComponent implements OnInit {
 
+  public allPokemons: any;
+
   constructor(private pokeApiService: PokeApiService) { }
 
   ngOnInit(): void {
     this.pokeApiService.getAllPokemon.subscribe(
-      res => res
+      res => {
+        this.allPokemons = res.results
+        console.log(this.allPokemons)
+      }
     );
   }
 

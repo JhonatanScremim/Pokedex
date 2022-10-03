@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, tap } from 'rxjs';
+import { Observable, tap, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +16,18 @@ export class PokeApiService {
     return this.httClient.get<any>(this.url).pipe(
       tap(res => res),
       tap(res => {
-        console.log(res)
+        res.results.map((x: any) => {
+          this.getApiPokemon(x.url).subscribe(
+            res => x.status = res
+          )
+        })
       })
     );
+  }
+
+  public getApiPokemon(url: string): Observable<any>{
+    return this.httClient.get<any>(url).pipe(
+      map(res => res)
+    )
   }
 }
