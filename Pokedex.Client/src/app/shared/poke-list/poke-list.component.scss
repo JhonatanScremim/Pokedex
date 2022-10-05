@@ -1,73 +1,79 @@
 @import "../../../config-scss/rem-calc.scss";
 
+.list{
+
+}
+
 :host{
-  display: flex;
-  justify-content: space-between;
-
-  padding: rem-calc(20) 0;
-
-  //Quebrar linha para não listar itens na horizontal
-  flex-wrap: wrap;
-
-  .pokemon{
+  .list{
     display: flex;
-    position: relative;
-    margin-bottom: rem-calc(10);
+    justify-content: space-between;
 
-    width: calc(49% - 2.5rem);
-    height: rem-calc(157 - 40);
-    background: var(--white);
-    border-radius: rem-calc(10);
-    padding: rem-calc(20);
+    padding: rem-calc(20) 0;
 
-    text-decoration: none;
-    color: var(--primary-color);
+    //Quebrar linha para não listar itens na horizontal
+    flex-wrap: wrap;
 
-    &-status{
-      h2{
-        font-size: rem-calc(22);
-        font-style: italic;
-        font-weight: 700;
+    .pokemon{
+      display: flex;
+      position: relative;
+      margin-bottom: rem-calc(10);
 
-        //Deixar primeira letra em maiuscula
-        text-transform: capitalize;
+      width: calc(49% - 2.5rem);
+      height: rem-calc(157 - 40);
+      background: var(--white);
+      border-radius: rem-calc(10);
+      padding: rem-calc(20);
 
-        margin-bottom: rem-calc(10);
-      }
+      text-decoration: none;
+      color: var(--primary-color);
 
-      ul{
-        display: flex;
-        flex-direction: column;
+      &-status{
+        h2{
+          font-size: rem-calc(22);
+          font-style: italic;
+          font-weight: 700;
 
-        li{
-          background: var(--gray);
-          font-size: rem-calc(10);
+          //Deixar primeira letra em maiuscula
+          text-transform: capitalize;
+
+          margin-bottom: rem-calc(10);
+        }
+
+        ul{
           display: flex;
-          justify-content: center;
-          align-items: center;
+          flex-direction: column;
 
-          border-radius: rem-calc(50);
-          width: rem-calc(60);
-          margin-bottom: rem-calc(5);
+          li{
+            background: var(--gray);
+            font-size: rem-calc(10);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: rem-calc(50);
+            width: rem-calc(60);
+            margin-bottom: rem-calc(5);
+          }
         }
       }
-    }
 
-    &-img{
-      position: absolute;
-      height: rem-calc(90);
-      width: rem-calc(110);
-      bottom: rem-calc(20);
-      right: rem-calc(20);
-      background: url("../../../assets/bg/background-list-pok.svg") no-repeat;
+      &-img{
+        position: absolute;
+        height: rem-calc(90);
+        width: rem-calc(110);
+        bottom: rem-calc(20);
+        right: rem-calc(20);
+        background: url("../../../assets/bg/background-list-pok.svg") no-repeat;
 
-      //centralizar imagem no background
-      display: flex;
-      align-items: center;
-      justify-content: center;
+        //centralizar imagem no background
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-      img{
-        width: rem-calc(70);
+        img{
+          width: rem-calc(70);
+        }
       }
     }
   }
