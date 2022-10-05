@@ -9,6 +9,9 @@ import { HomeComponent } from './home/home.component';
 import { DetailsComponent } from './details/details.component';
 import { SharedModule } from '../shared/shared.module';
 
+//Router
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -18,6 +21,7 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     RoutingModule,
+    RouterModule,
     SharedModule
   ]
 })

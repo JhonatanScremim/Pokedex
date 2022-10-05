@@ -20,6 +20,9 @@
     border-radius: rem-calc(10);
     padding: rem-calc(20);
 
+    text-decoration: none;
+    color: var(--primary-color);
+
     &-status{
       h2{
         font-size: rem-calc(22);
