@@ -6,7 +6,8 @@
       <section class="pokemon-status">
         <h2>{{pokemon.name}}</h2>
         <ul>
-          <li *ngFor="let item of pokemon?.status?.types">{{item?.type?.name}}</li>
+          <li [class]="'pokemon-type--' + item?.type?.name.toLowerCase()"
+          *ngFor="let item of pokemon?.status?.types">{{item?.type?.name}}</li>
         </ul>
       </section>
       <section class="pokemon-img">

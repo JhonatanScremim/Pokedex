@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import PokemonDTO from 'src/app/models/pokemonDTO';
 import { PokeApiService } from 'src/app/service/poke-api.service';
 
 @Component({
@@ -8,6 +9,7 @@ import { PokeApiService } from 'src/app/service/poke-api.service';
 })
 export class PokeListComponent implements OnInit {
 
+  public allRightPokemons: Array<PokemonDTO> = new Array<PokemonDTO>();
   public allPokemons: any;
   private setAllPokemons: any;
   public apiError: boolean = false;
