@@ -3,20 +3,20 @@
 <ng-template [ngIf]="isLoading">
   <main>
     <section class="pokemon-name">
-      <h1>{{pokemon[0].name}}</h1>
-      <h2>{{pokemon[1].names[0].name}}</h2>
+      <h1 class="slideInLeft">{{pokemon[0].name}}</h1>
+      <h2 class="slideInLeft">{{pokemon[1].names[0].name}}</h2>
     </section>
     <section class="pokemon-status">
-      <img
+      <img class="slideInDown"
         [src]="pokemon[0].sprites.other.dream_world.front_default"
         [alt]="pokemon[0].name">
 
-      <article class="pokemon-status-statistics">
+      <article class="pokemon-status-statistics fadeIn">
         <section>
           <h3>Estatísticas</h3>
           <ol>
             <li *ngFor="let value of pokemon[0].stats">
-              {{value.stat.name}}
+              {{value.stat.name | titlecase}}
               <strong>{{value.base_stat}}</strong>
             </li>
           </ol>
