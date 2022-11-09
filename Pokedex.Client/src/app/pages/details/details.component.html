@@ -12,6 +12,12 @@
         [alt]="pokemon[0].name">
 
       <article class="pokemon-status-statistics fadeIn">
+        <div>
+          <ul class="types-pokemon">
+            <li [class]="'pokemon-type--' + item?.type?.name.toLowerCase()"
+            *ngFor="let item of pokemon[0].types">{{item?.type?.name}}</li>
+          </ul>
+        </div>
         <section>
           <h3>Estatísticas</h3>
           <ol>

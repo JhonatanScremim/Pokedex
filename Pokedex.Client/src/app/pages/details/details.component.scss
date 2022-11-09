@@ -37,6 +37,24 @@
 			}
 		}
 
+    .types-pokemon{
+      display: flex;
+      width: 38%;
+      justify-content: space-between;
+    }
+
+    .types-pokemon li{
+      font-size: rem-calc(25);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: rem-calc(5);
+
+      border-radius: rem-calc(10);
+      width: rem-calc(120);
+      margin-bottom: rem-calc(5);
+    }
+
 		.pokemon-status {
 			position: relative;
 
@@ -44,7 +62,7 @@
 				position: absolute;
 				top: rem-calc(-150);
 				left: rem-calc(30);
-				max-width: rem-calc(200);
+				max-width: rem-calc(250);
 				z-index: 10;
 
 				//Remove Bug Animation
