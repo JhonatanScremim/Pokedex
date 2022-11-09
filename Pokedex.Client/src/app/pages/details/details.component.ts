@@ -43,4 +43,8 @@ export class DetailsComponent implements OnInit {
     );
   }
 
+  public getImagePokemon(id: number){
+    return this.pokeApiService.getImagePokemon(id);
+  }
+
 }

@@ -8,7 +8,7 @@
     </section>
     <section class="pokemon-status">
       <img class="slideInDown"
-        [src]="pokemon[0].sprites.other.dream_world.front_default"
+        [src]="getImagePokemon(pokemon[0].id)"
         [alt]="pokemon[0].name">
 
       <article class="pokemon-status-statistics fadeIn">

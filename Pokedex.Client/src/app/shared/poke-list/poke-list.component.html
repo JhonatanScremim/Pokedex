@@ -11,7 +11,7 @@
         </ul>
       </section>
       <section class="pokemon-img">
-        <img src={{pokemon.status?.sprites?.other?.dream_world?.front_default}} alt={{pokemon.name}}>
+        <img [src]="getImagePokemon(pokemon?.status?.id)" alt={{pokemon.name}}>
       </section>
     </a>
   </ng-template>

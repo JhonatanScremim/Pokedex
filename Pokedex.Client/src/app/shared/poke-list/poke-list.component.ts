@@ -11,6 +11,7 @@ export class PokeListComponent implements OnInit {
   public allPokemons: any;
   private setAllPokemons: any;
   public apiError: boolean = false;
+  public idPokemon = 0;
 
   //pagination
   page = 0;
@@ -45,4 +46,7 @@ export class PokeListComponent implements OnInit {
     this.allPokemons = filter;
   }
 
+  public getImagePokemon(id: number){
+    return this.pokeApiService.getImagePokemon(id);
+  }
 }

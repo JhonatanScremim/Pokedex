@@ -30,4 +30,11 @@ export class PokeApiService {
       map(res => res)
     )
   }
+
+  public getImagePokemon(id: number){
+    if(id == null)
+      return;
+
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
+  }
 }
