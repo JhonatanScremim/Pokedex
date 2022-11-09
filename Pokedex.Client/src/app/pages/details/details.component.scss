@@ -52,7 +52,7 @@
 
       border-radius: rem-calc(10);
       width: rem-calc(120);
-      margin-bottom: rem-calc(5);
+      margin-bottom: rem-calc(40);
     }
 
 		.pokemon-status {
@@ -84,7 +84,7 @@
 				border-radius: rem-calc(50) rem-calc(50) 0 0;
 
 				h3 {
-					margin-bottom: rem-calc(20);
+					margin-bottom: rem-calc(30);
 					font-weight: 700;
 					font-style: italic;
 					font-size: rem-calc(32);
@@ -99,6 +99,13 @@
 
 						font-size: rem-calc(18);
 						line-height: 130%;
+            p{
+              width: 200px;
+            }
+            strong{
+              text-align: right;
+              width: 45px;
+            }
 					}
 				}
 			}
@@ -135,4 +142,25 @@
 			}
 		}
 	}
+
+  .progress {
+    border-radius: 100px;
+    align-items: center;
+    display: flex;
+    height: 24px;
+    width: 100%;
+  }
+
+  .progress-value {
+    animation: load 3s normal forwards;
+    border-radius: 100px;
+    background: var(--secondary-color);
+    height: 50%;
+    width: 100%;
+  }
+
+  @keyframes load {
+    0% { width: 0; }
+    100% { width: var(--value); }
+  }
 }

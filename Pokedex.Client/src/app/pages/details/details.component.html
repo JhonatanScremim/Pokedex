@@ -22,7 +22,10 @@
           <h3>Estatísticas</h3>
           <ol>
             <li *ngFor="let value of pokemon[0].stats">
-              {{value.stat.name | titlecase}}
+              <p>{{value.stat.name | titlecase}}:</p>
+              <div class="progress">
+                <div class="progress-value" style="--value: {{value.base_stat - 15}}%"></div>
+              </div>
               <strong>{{value.base_stat}}</strong>
             </li>
           </ol>
