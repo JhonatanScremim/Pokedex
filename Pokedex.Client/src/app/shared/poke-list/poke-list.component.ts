@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import PokemonDTO from 'src/app/models/pokemonDTO';
 import { PokeApiService } from 'src/app/service/poke-api.service';
 
 @Component({
@@ -9,16 +8,25 @@ import { PokeApiService } from 'src/app/service/poke-api.service';
 })
 export class PokeListComponent implements OnInit {
 
-  public allRightPokemons: Array<PokemonDTO> = new Array<PokemonDTO>();
   public allPokemons: any;
   private setAllPokemons: any;
   public apiError: boolean = false;
 
+  //pagination
+  page = 0;
+  totalPokemons: number = 0;
+
   constructor(private pokeApiService: PokeApiService) { }
 
   ngOnInit(): void {
-    this.pokeApiService.getAllPokemon.subscribe(
+    this.getPokemons();
+  }
+
+  public getPokemons(){
+    let offset = (this.page === 0 || this.page === 1) ? 0 : (this.page * 10) - 10 ;
+    this.pokeApiService.getAllPokemon(10, offset).subscribe(
       res => {
+        this.totalPokemons = res.count;
         this.setAllPokemons = res.results;
         this.allPokemons = this.setAllPokemons;
         console.log(this.allPokemons);

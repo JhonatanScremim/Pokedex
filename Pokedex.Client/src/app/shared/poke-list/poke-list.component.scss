@@ -286,3 +286,27 @@
 
   }
 }
+
+pagination-controls{
+  text-align: center;
+}
+
+::ng-deep ul > li:not(.active) > a {
+  color: white !important;
+  border-radius: 5px;
+}
+
+
+::ng-deep ul > li:not(.active) > a:hover{
+  color: black !important;
+}
+
+::ng-deep ul > li.disabled > span {
+  color: #A8B7C6;
+}
+
+
+::ng-deep .current {
+  background-color: #707070 !important;
+  border-radius: 5px !important;
+}
