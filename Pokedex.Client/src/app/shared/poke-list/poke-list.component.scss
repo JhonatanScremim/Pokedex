@@ -79,11 +79,13 @@
 
   pagination-controls{
     text-align: center;
+    font-size: rem-calc(20) !important;
   }
 
   ::ng-deep ul > li:not(.active) > a {
     color: white !important;
     border-radius: 5px;
+    margin-bottom: rem-calc(40) !important;
   }
 
 

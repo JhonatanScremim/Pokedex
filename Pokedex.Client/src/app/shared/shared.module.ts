@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 //Routes
 import { RouterModule } from '@angular/router';
@@ -24,7 +25,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
   imports: [
     CommonModule,
     RouterModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatButtonToggleModule
   ]
 })
 export class SharedModule { }
