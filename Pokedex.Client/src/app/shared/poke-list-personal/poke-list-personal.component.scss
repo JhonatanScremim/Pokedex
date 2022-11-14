@@ -1,0 +1,105 @@
+@import "../../../config-scss/rem-calc.scss";
+
+:host{
+  .list{
+    display: flex;
+    justify-content: space-between;
+
+    padding: rem-calc(20) 0;
+
+    //Quebrar linha para não listar itens na horizontal
+    flex-wrap: wrap;
+
+    .pokemon{
+      display: flex;
+      position: relative;
+      margin-bottom: rem-calc(10);
+
+      width: calc(49% - 2.5rem);
+      height: rem-calc(187 - 40);
+      background: var(--white);
+      border-radius: rem-calc(10);
+      padding: rem-calc(20);
+
+      text-decoration: none;
+      color: var(--primary-color);
+
+      &-status{
+        h2{
+          font-size: rem-calc(26);
+          font-style: italic;
+          font-weight: 700;
+
+          //Deixar primeira letra em maiuscula
+          text-transform: capitalize;
+
+          margin-bottom: rem-calc(10);
+        }
+
+        ul{
+          display: flex;
+          flex-direction: column;
+
+          li{
+            font-size: rem-calc(14);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2px;
+
+            border-radius: rem-calc(50);
+            width: rem-calc(70);
+            margin-bottom: rem-calc(5);
+          }
+
+
+        }
+      }
+
+      &-img{
+        position: absolute;
+        height: 6.625rem;
+        width: 8.875rem;
+        bottom: 2.25rem;
+        right: 3.25rem;
+        background: url("../../../assets/bg/background-list-pok.svg") no-repeat;
+        background-size: rem-calc(132);
+
+        //centralizar imagem no background
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img{
+          width: rem-calc(140);
+        }
+      }
+    }
+  }
+
+  pagination-controls{
+    text-align: center;
+    font-size: rem-calc(20) !important;
+  }
+
+  ::ng-deep ul > li:not(.active) > a {
+    color: white !important;
+    border-radius: 5px;
+    margin-bottom: rem-calc(40) !important;
+  }
+
+
+  ::ng-deep ul > li:not(.active) > a:hover{
+    color: black !important;
+  }
+
+  ::ng-deep ul > li.disabled > span {
+    color: #A8B7C6;
+  }
+
+
+  ::ng-deep .current {
+    background-color: #707070 !important;
+    border-radius: 5px !important;
+  }
+}
