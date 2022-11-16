@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pokedex.Domain\Pokedex.Domain.csproj" />
+    <ProjectReference Include="..\Pokedex.Repository\Pokedex.Repository.csproj" />
+    <ProjectReference Include="..\Pokedex.Infra\Pokedex.Infra.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
