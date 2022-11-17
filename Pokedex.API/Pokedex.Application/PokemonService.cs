@@ -19,6 +19,7 @@ namespace Pokedex.Application
         public async Task<List<PokemonViewModel>> GetAll()
         {
             var pokemons = await _pokemonRepository.GetAll();
+            Console.WriteLine(pokemons);
             return _mapper.Map<List<PokemonViewModel>>(pokemons);
         }
     }
