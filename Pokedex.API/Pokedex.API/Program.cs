@@ -1,11 +1,22 @@
+using Pokedex.Application;
+using Pokedex.Application.Interfaces;
+using Pokedex.Repository;
+using Pokedex.Repository.Config;
+using Pokedex.Repository.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+builder.Services.AddCors();
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.AddSingleton<DataConfig>();
+builder.Services.AddScoped<IPokemonService, PokemonService>();
+builder.Services.AddScoped<IPokemonRepository, PokemonRepository>();
 
 var app = builder.Build();
 

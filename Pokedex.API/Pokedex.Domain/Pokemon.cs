@@ -9,12 +9,14 @@ namespace Pokedex.Domain
         public string Id { get; set; }
         public string Name { get; set; }
         public string ImageUrl { get; set; }
+        public List<Types> Types { get; set; }
 
-        public Pokemon(string id, string name, string imageUrl)
+        public Pokemon(string id, string name, string imageUrl, List<Types> types)
         {
             Id = id;
             Name = name;
             ImageUrl = imageUrl;
+            Types = types;
         }
     }
 }
