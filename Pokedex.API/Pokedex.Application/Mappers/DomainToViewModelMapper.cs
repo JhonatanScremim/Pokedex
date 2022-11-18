@@ -9,6 +9,7 @@ namespace Pokedex.Infra.Mappers
         public DomainToViewModelMapper()
         {
             CreateMap<Pokemon, PokemonViewModel>();
+            CreateMap<PokemonType, PokemonTypeViewModel>();
         }
     }
 }

@@ -16,7 +16,9 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddSingleton<DataConfig>();
 builder.Services.AddScoped<IPokemonService, PokemonService>();
+builder.Services.AddScoped<IPokemonTypeService, PokemonTypeService>();
 builder.Services.AddScoped<IPokemonRepository, PokemonRepository>();
+builder.Services.AddScoped<IPokemonTypeRepository, PokemonTypeRepository>();
 
 var app = builder.Build();
 

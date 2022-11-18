@@ -3,13 +3,13 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Pokedex.Domain
 {
-    public class Types
+    public class PokemonType
     {
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
         public string Name { get; set; }
 
-        public Types(string id, string name)
+        public PokemonType(string id, string name)
         {
             Id = id;
             Name = name;

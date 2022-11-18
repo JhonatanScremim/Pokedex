@@ -5,7 +5,7 @@ namespace Pokedex.Infra.ViewModels
         public string Id { get; set; }
         public string Name { get; set; }
         public string ImageUrl { get; set; }
-        public List<TypesViewModel> Types { get; set; }
+        public List<PokemonTypeViewModel> Types { get; set; }
         public int Hp { get; set; }
         public int Attack { get; set; }
         public int Defense { get; set; }
@@ -13,7 +13,7 @@ namespace Pokedex.Infra.ViewModels
         public int SpecialDefense { get; set; }
         public int Speed { get; set; }
 
-        public PokemonViewModel(string id, string name, string imageUrl, List<TypesViewModel> types, int hp, int attack, int defense, int specialAttack, int specialDefense, int speed)
+        public PokemonViewModel(string id, string name, string imageUrl, List<PokemonTypeViewModel> types, int hp, int attack, int defense, int specialAttack, int specialDefense, int speed)
         {
             Id = id;
             Name = name;

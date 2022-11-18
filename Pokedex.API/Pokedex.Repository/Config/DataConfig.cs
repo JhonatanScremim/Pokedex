@@ -37,9 +37,9 @@ namespace Pokedex.Repository.Config
                 });
             }
 
-            if (!BsonClassMap.IsClassMapRegistered(typeof(Types)))
+            if (!BsonClassMap.IsClassMapRegistered(typeof(PokemonType)))
             {
-                BsonClassMap.RegisterClassMap<Types>(i =>
+                BsonClassMap.RegisterClassMap<PokemonType>(i =>
                 {
                     i.AutoMap();
                     i.MapIdMember(x => x.Id);
