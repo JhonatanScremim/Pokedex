@@ -1,0 +1,19 @@
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from '@angular/core';
+import { Observable, tap, map } from "rxjs";
+
+@Injectable({
+  providedIn: 'root'
+})
+
+export class PokeApiPersonalService {
+  private url = "https://localhost:7029/api/v1/";
+
+  constructor(private httClient: HttpClient) { }
+
+  public getAllPokemon(): Observable<any>{
+    return this.httClient.get<any>(`${this.url}Pokemon`).pipe(
+      map(res => res)
+    )
+  }
+}

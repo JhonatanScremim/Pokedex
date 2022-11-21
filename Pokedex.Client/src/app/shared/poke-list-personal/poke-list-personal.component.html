@@ -1,1 +1,17 @@
-<p>poke-list-personal works!</p>
+
+<section class="list">
+  <ng-template ngFor let-pokemon [ngForOf]="allPokemons">
+  <a class="pokemon">
+      <section class="pokemon-status">
+        <h2>{{pokemon.name}}</h2>
+        <ul>
+          <li [class]="'pokemon-type--' + item.toLowerCase()"
+          *ngFor="let item of pokemon?.types">{{item | titlecase}}</li>
+        </ul>
+      </section>
+      <section class="pokemon-img">
+        <img src="{{pokemon.imageUrl}}" alt={{pokemon.name}}>
+      </section>
+    </a>
+  </ng-template>
+</section>
