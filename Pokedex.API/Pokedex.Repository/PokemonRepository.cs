@@ -19,6 +19,11 @@ namespace Pokedex.Repository
             return await _pokemon.AsQueryable().ToListAsync();
         }
 
+        public Pokemon? GetById(string id)
+        {
+            return _pokemon.AsQueryable().FirstOrDefault(x => x.Id == id);
+        }
+
         public async Task Insert(Pokemon pokemon)
         {
             await _pokemon.InsertOneAsync(pokemon);

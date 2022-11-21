@@ -28,6 +28,19 @@ namespace Pokedex.API.Controllers
             }
         }
 
+        [HttpGet("{id}")]
+        public ActionResult GetById(string id)
+        {
+            try
+            {
+                return Ok(_pokemonService.GetById(id));
+            }
+            catch(Exception e)
+            {
+                return BadRequest("Error: " + e);
+            }
+        }
+
         [HttpPost("")]
         public async Task<ActionResult> Create(PokemonDTO dto)
         {
