@@ -18,5 +18,10 @@ namespace Pokedex.Repository
         {
             return await _pokemon.AsQueryable().ToListAsync();
         }
+
+        public async Task Insert(Pokemon pokemon)
+        {
+            await _pokemon.InsertOneAsync(pokemon);
+        }
     }
 }

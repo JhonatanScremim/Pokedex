@@ -1,8 +1,7 @@
-namespace Pokedex.Infra.ViewModels
+namespace Pokedex.Infra.DTOs
 {
-    public class PokemonViewModel
+    public class PokemonDTO
     {
-        public string Id { get; set; }
         public string Name { get; set; }
         public string ImageUrl { get; set; }
         public List<string> Types { get; set; }
@@ -13,9 +12,8 @@ namespace Pokedex.Infra.ViewModels
         public int SpecialDefense { get; set; }
         public int Speed { get; set; }
 
-        public PokemonViewModel(string id, string name, string imageUrl, List<string> types, int hp, int attack, int defense, int specialAttack, int specialDefense, int speed)
+        public PokemonDTO(string name, string imageUrl, List<string> types, int hp, int attack, int defense, int specialAttack, int specialDefense, int speed)
         {
-            Id = id;
             Name = name;
             ImageUrl = imageUrl;
             Types = types;

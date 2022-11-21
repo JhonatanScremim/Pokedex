@@ -1,5 +1,7 @@
 using AutoMapper;
 using Pokedex.Application.Interfaces;
+using Pokedex.Domain;
+using Pokedex.Infra.DTOs;
 using Pokedex.Infra.ViewModels;
 using Pokedex.Repository.Interfaces;
 
@@ -21,6 +23,12 @@ namespace Pokedex.Application
             var pokemons = await _pokemonRepository.GetAll();
             Console.WriteLine(pokemons);
             return _mapper.Map<List<PokemonViewModel>>(pokemons);
+        }
+
+        public async Task Create(PokemonDTO dto)
+        {
+            var pokemon = _mapper.Map<Pokemon>(dto);
+            await _pokemonRepository.Insert(pokemon);
         }
     }
 }
