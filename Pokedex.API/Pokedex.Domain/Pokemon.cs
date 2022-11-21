@@ -6,10 +6,10 @@ namespace Pokedex.Domain
     public class Pokemon
     {
         [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public string ImageUrl { get; set; }
-        public List<string> Types { get; set; }
+        public string Id { get; set; } = "";
+        public string Name { get; set; } = "";
+        public string ImageUrl { get; set; } = "";
+        public List<string> Types { get; set; } = new List<string>();
         public int Hp { get; set; }
         public int Attack { get; set; }
         public int Defense { get; set; }
