@@ -1,10 +1,39 @@
 @import '../../../config-scss/rem-calc.scss';
 
 :host{
-  header{
+
+  .toggle{
+    position: absolute;
+    padding: rem-calc(20);
+    font-size: rem-calc(16);
+  }
+
+  .image-header{
     display: flex;
-    justify-content: center;
-    align-items: center;
     padding: rem-calc(40) 0;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .mat-button-toggle-group{
+    border-radius: 50px;
+    padding: 2px;
+    width: 160px;
+    justify-content: space-between;
+    background-color: #fff;
+  }
+
+  .mat-button-toggle{
+    border-radius: 50px;
+    width: 50%;
+    border: none;
+  }
+  .mat-button-toggle-checked{
+    background-color: #262835 !important;
+    color: #fff !important;
+  }
+  .mat-button-toggle:not(.checked){
+    color: #B7C0C8;
+    background-color: #fff;
   }
 }

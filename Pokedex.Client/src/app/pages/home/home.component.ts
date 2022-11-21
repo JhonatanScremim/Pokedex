@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  public personalPokedex: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public toggleClicked(event: any){
+    this.personalPokedex = event;
+    console.log(event);
   }
 
 }

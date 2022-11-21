@@ -1,6 +1,15 @@
-<app-poke-header></app-poke-header>
+<app-poke-header
+[toggleButton]="true"
+(toggleClicked)="toggleClicked($event)"
+></app-poke-header>
 
 
-<main>
+<main *ngIf="!personalPokedex">
   <app-poke-list></app-poke-list>
 </main>
+
+<main *ngIf="personalPokedex">
+  <app-poke-list-personal></app-poke-list-personal>
+</main>
+
+
