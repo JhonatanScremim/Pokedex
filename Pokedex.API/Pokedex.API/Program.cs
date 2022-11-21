@@ -1,5 +1,7 @@
 using Pokedex.Application;
 using Pokedex.Application.Interfaces;
+using Pokedex.Infra;
+using Pokedex.Infra.Interfaces;
 using Pokedex.Repository;
 using Pokedex.Repository.Config;
 using Pokedex.Repository.Interfaces;
@@ -19,6 +21,7 @@ builder.Services.AddScoped<IPokemonService, PokemonService>();
 builder.Services.AddScoped<IPokemonTypeService, PokemonTypeService>();
 builder.Services.AddScoped<IPokemonRepository, PokemonRepository>();
 builder.Services.AddScoped<IPokemonTypeRepository, PokemonTypeRepository>();
+builder.Services.AddScoped<IFileUpload, FileUpload>();
 
 var app = builder.Build();
 
