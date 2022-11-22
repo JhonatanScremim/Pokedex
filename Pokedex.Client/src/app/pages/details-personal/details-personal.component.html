@@ -1,0 +1,81 @@
+<app-poke-header [toggleButton]="false"></app-poke-header>
+
+<ng-template [ngIf]="isLoading">
+  <main>
+    <section class="pokemon-name">
+      <h1 class="slideInLeft">{{pokemon.name}}</h1>
+      <h2 class="slideInLeft">{{pokemon.name}}</h2>
+    </section>
+    <section class="pokemon-status">
+      <img class="slideInDown"
+        [src]="pokemon.imageUrl"
+        [alt]="pokemon.name">
+
+      <article class="pokemon-status-statistics fadeIn">
+        <div>
+          <ul class="types-pokemon">
+            <li [class]="'pokemon-type--' + item.toLowerCase()"
+            *ngFor="let item of pokemon.types">{{item | titlecase}}</li>
+          </ul>
+        </div>
+        <section>
+          <h3>Estatísticas</h3>
+          <ol>
+            <li>
+              <p>Hp:</p>
+              <div class="progress">
+                <div class="progress-value" style="--value: {{pokemon.hp - 15}}%"></div>
+              </div>
+              <strong>{{pokemon.hp}}</strong>
+            </li>
+            <li>
+              <p>Attack:</p>
+              <div class="progress">
+                <div class="progress-value" style="--value: {{pokemon.attack - 15}}%"></div>
+              </div>
+              <strong>{{pokemon.attack}}</strong>
+            </li>
+            <li>
+              <p>Defense:</p>
+              <div class="progress">
+                <div class="progress-value" style="--value: {{pokemon.defense - 15}}%"></div>
+              </div>
+              <strong>{{pokemon.defense}}</strong>
+            </li>
+            <li>
+              <p>Special-attack:</p>
+              <div class="progress">
+                <div class="progress-value" style="--value: {{pokemon.specialAttack - 15}}%"></div>
+              </div>
+              <strong>{{pokemon.specialAttack}}</strong>
+            </li>
+            <li>
+              <p>Special-defense:</p>
+              <div class="progress">
+                <div class="progress-value" style="--value: {{pokemon.specialDefense - 15}}%"></div>
+              </div>
+              <strong>{{pokemon.specialDefense}}</strong>
+            </li>
+            <li>
+              <p>Speed:</p>
+              <div class="progress">
+                <div class="progress-value" style="--value: {{pokemon.speed - 15}}%"></div>
+              </div>
+              <strong>{{pokemon.speed}}</strong>
+            </li>
+          </ol>
+        </section>
+        <a [routerLink]="['']" class="btn btn-secondary">
+          Voltar
+        </a>
+      </article>
+    </section>
+
+  </main>
+
+  <img
+    src="assets/imgs/error.png"
+    alt="Erro na busca de pokémon"
+    width="100%"
+    *ngIf="apiError"/>
+</ng-template>

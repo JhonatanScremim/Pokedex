@@ -11,12 +11,14 @@ import { SharedModule } from '../shared/shared.module';
 
 //Router
 import { RouterModule } from '@angular/router';
+import { DetailsPersonalComponent } from './details-personal/details-personal.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    DetailsComponent
+    DetailsComponent,
+    DetailsPersonalComponent
   ],
   imports: [
     CommonModule,

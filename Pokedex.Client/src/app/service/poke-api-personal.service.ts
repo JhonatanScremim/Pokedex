@@ -16,4 +16,10 @@ export class PokeApiPersonalService {
       map(res => res)
     )
   }
+
+  public getPokemonById(id: string){
+    return this.httClient.get<any>(`${this.url}Pokemon/${id}`).pipe(
+      map(res => res)
+    )
+  }
 }
