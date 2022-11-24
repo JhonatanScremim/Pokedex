@@ -5,6 +5,7 @@ import { DetailsPersonalComponent } from './details-personal/details-personal.co
 //Components
 import { DetailsComponent } from './details/details.component';
 import { HomeComponent } from './home/home.component';
+import { NewPokemonPersonalComponent } from './new-pokemon-personal/new-pokemon-personal.component';
 
 const routes: Routes = [
   {
@@ -18,7 +19,12 @@ const routes: Routes = [
   {
     path: 'details-personal/:id',
     component: DetailsPersonalComponent
+  },
+  {
+    path: 'new-pokemon-personal',
+    component: NewPokemonPersonalComponent
   }
+
 ];
 
 @NgModule({

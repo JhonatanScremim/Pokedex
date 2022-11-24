@@ -12,13 +12,15 @@ import { SharedModule } from '../shared/shared.module';
 //Router
 import { RouterModule } from '@angular/router';
 import { DetailsPersonalComponent } from './details-personal/details-personal.component';
+import { NewPokemonPersonalComponent } from './new-pokemon-personal/new-pokemon-personal.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     DetailsComponent,
-    DetailsPersonalComponent
+    DetailsPersonalComponent,
+    NewPokemonPersonalComponent
   ],
   imports: [
     CommonModule,

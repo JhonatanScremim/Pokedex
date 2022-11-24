@@ -3,9 +3,9 @@
 :host{
 
   .toggle{
-    position: absolute;
     padding: rem-calc(20);
     font-size: rem-calc(16);
+    position: absolute;
   }
 
   .image-header{
@@ -13,6 +13,29 @@
     padding: rem-calc(40) 0;
     justify-content: center;
     width: 100%;
+  }
+
+  .header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .new-pokemon{
+    padding: rem-calc(30);
+    position: absolute;
+    right: 0;
+  }
+
+  .new-pokemon-btn{
+    font-size: rem-calc(16);
+    border-radius: 50px;
+    padding: 10px;
+    width: 160px;
+  }
+  .new-pokemon-btn:hover{
+    cursor: pointer;
+    background-color: #B7C0C8;
   }
 
   .mat-button-toggle-group{
