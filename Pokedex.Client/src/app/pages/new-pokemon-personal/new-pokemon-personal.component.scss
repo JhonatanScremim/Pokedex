@@ -38,6 +38,8 @@
     width:50%
   }
 
+  //Input Name
+
   .input-name{
     position: relative;
     padding: 15px 0 0;
@@ -103,6 +105,63 @@
   /* reset input */
   .input-field{
     &:required,&:invalid { box-shadow:none; }
+  }
+
+  // Select Type
+
+  .text-type{
+    color: var(--secondary-color);
+    margin-top: rem-calc(30);
+    font-size: rem-calc(20);
+  }
+
+  .select-group{
+    display: flex;
+  }
+
+  .select-types{
+    width: 25%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    font-size: rem-calc(20);
+    color: var(--primary-color);
+    border-width: 3px;
+    border-image: linear-gradient(to right, var(--secondary-color),var(--primary-color));
+    border-image-slice: 1;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 7px 0;
+    cursor: pointer;
+  }
+
+  .second-type{
+    margin-left: 20px;
+  }
+
+  //Status
+
+  .status-text{
+    color: var(--secondary-color);
+    margin-top: rem-calc(30);
+    font-size: rem-calc(20);
+  }
+
+  .status-info{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .status{
+    width: 35%;
+    margin-top: 0px !important;
+  }
+
+  .status-margin{
+    margin-left: 20px;
+  }
+
+  .label-status{
+    font-size: rem-calc(17) !important;
   }
 
 }

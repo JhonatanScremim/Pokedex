@@ -1,14 +1,59 @@
 <app-poke-header [toggleButton]="false"></app-poke-header>
-<form class="form">
-  <div class="basic-info">
-    <div class="input-name field">
-      <input type="input" class="input-field" placeholder="Nome"/>
-      <label class="input-label">Nome do pokémon:</label>
-    </div>
-  </div>
 
-  <div class="image-info">
-    <label>Nome</label>
-    <input type="text" placeholder="nome">
-  </div>
-</form>
+<ng-template [ngIf]="isLoading">
+  <form class="form">
+    <div class="basic-info">
+      <div class="input-name field">
+        <input type="input" class="input-field" placeholder="Nome"/>
+        <label class="input-label">Nome do pokémon:</label>
+      </div>
+
+      <p class="text-type">Tipo pokémon</p>
+      <div class="select-group">
+        <select class="select-types">
+          <option *ngFor="let type of typesPokemon" [value]="type.name">{{type.name}}</option>
+        </select>
+
+        <select class="select-types second-type">
+          <option *ngFor="let type of typesPokemon" [value]="type.name">{{type.name}}</option>
+        </select>
+      </div>
+
+      <p class="status-text">Status</p>
+      <div class="status-info">
+        <div class="input-name status field">
+          <input type="number" class="input-field" placeholder="Hp"/>
+          <label class="input-label label-status">Hp:</label>
+        </div>
+        <div class="input-name status field status-margin">
+          <input type="number" class="input-field" placeholder="Attack"/>
+          <label class="input-label label-status">Attack:</label>
+        </div>
+        <div class="input-name status field">
+          <input type="number" class="input-field" placeholder="Defense"/>
+          <label class="input-label label-status">Defense:</label>
+        </div>
+        <div class="input-name status field status-margin">
+          <input type="number" class="input-field" placeholder="Special-attack"/>
+          <label class="input-label label-status">SP-Attack:</label>
+        </div>
+        <div class="input-name status field ">
+          <input type="number" class="input-field" placeholder="Special-defense"/>
+          <label class="input-label label-status">SP-Defense:</label>
+        </div>
+        <div class="input-name status field status-margin">
+          <input type="number" class="input-field " placeholder="Speed"/>
+          <label class="input-label label-status">Speed:</label>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="image-info">
+      <label>Nome</label>
+      <input type="text" placeholder="nome">
+    </div>
+  </form>
+</ng-template>
+
