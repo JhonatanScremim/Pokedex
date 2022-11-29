@@ -48,11 +48,19 @@
       </div>
     </div>
 
-
-
     <div class="image-info">
-      <label>Nome</label>
-      <input type="text" placeholder="nome">
+      <input id="input-image" class="image-input" type="file" (change)="inputFileChange($event)">
+      <label for="input-image" class="image-label">
+        <img id="image-poke" class="image-poke" src="../../../assets/imgs/upload-image.png" alt="">
+        <div id="start">
+          <i class="fa fa-download" aria-hidden="true"></i>
+          <div id="image-text">Selecione uma imagem</div>
+          <span id="file-upload-btn" class="btn btn-primary">Buscar</span>
+        </div>
+        <div id="response">
+          <div id="messages"></div>
+        </div>
+      </label>
     </div>
   </form>
 </ng-template>

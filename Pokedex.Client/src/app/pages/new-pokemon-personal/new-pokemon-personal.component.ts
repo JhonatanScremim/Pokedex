@@ -27,4 +27,25 @@ export class NewPokemonPersonalComponent implements OnInit {
     )
   }
 
+  public inputFileChange(event: any){
+    console.log(event);
+    if(event.srcElement.files && event.srcElement.files[0]){
+      const photo = event.srcElement.files[0];
+
+      let input = document.getElementById('image-text');
+      if (input != null){
+        input.innerHTML = photo.name;
+      }
+
+      const fileReader = new FileReader();
+      fileReader.onload = function(){
+        let image = document.getElementById('image-poke') as HTMLImageElement;
+        if(image != null)
+          image.src = <string>fileReader.result;
+      }
+      fileReader.readAsDataURL(photo);
+
+    }
+  }
+
 }
