@@ -28,4 +28,8 @@ export class PokeApiPersonalService {
       map(res => res)
     )
   }
+
+  public savePokemon(pokemon: any){
+    return this.httClient.post(`${this.url}Pokemon`, pokemon);
+  }
 }

@@ -1,48 +1,52 @@
 <app-poke-header [toggleButton]="false"></app-poke-header>
 
 <ng-template [ngIf]="isLoading">
-  <form class="form">
+  <form class="form" #frm="ngForm" (ngSubmit)="savePokemon(frm)">
     <div class="basic-info">
       <div class="input-name field">
-        <input type="input" class="input-field" placeholder="Nome"/>
+        <input type="input" class="input-field" placeholder="Nome"
+        name="name" #name="ngModel" [ngModel]="name.value"/>
         <label class="input-label">Nome do pokémon:</label>
       </div>
 
       <p class="text-type">Tipo pokémon</p>
-      <div class="select-group">
-        <select class="select-types">
-          <option *ngFor="let type of typesPokemon" [value]="type.name">{{type.name}}</option>
-        </select>
+      <ng-multiselect-dropdown class="select-types"
+      [settings]="dropdownSettings"
+      [data]="typesPokemon"
+      (onSelect)="onItemSelect($event)"
+      name="types" [ngModel]="name.value"></ng-multiselect-dropdown>
 
-        <select class="select-types second-type">
-          <option *ngFor="let type of typesPokemon" [value]="type.name">{{type.name}}</option>
-        </select>
-      </div>
 
       <p class="status-text">Status</p>
       <div class="status-info">
         <div class="input-name status field">
-          <input type="number" class="input-field" placeholder="Hp"/>
+          <input type="number" class="input-field" placeholder="Hp"
+          name="hp" #name="ngModel" [ngModel]="name.value"/>
           <label class="input-label label-status">Hp:</label>
         </div>
         <div class="input-name status field status-margin">
-          <input type="number" class="input-field" placeholder="Attack"/>
+          <input type="number" class="input-field" placeholder="Attack"
+          name="attack" #name="ngModel" [ngModel]="name.value"/>
           <label class="input-label label-status">Attack:</label>
         </div>
         <div class="input-name status field">
-          <input type="number" class="input-field" placeholder="Defense"/>
+          <input type="number" class="input-field" placeholder="Defense"
+          name="defense" #name="ngModel" [ngModel]="name.value"/>
           <label class="input-label label-status">Defense:</label>
         </div>
         <div class="input-name status field status-margin">
-          <input type="number" class="input-field" placeholder="Special-attack"/>
+          <input type="number" class="input-field" placeholder="Special-attack"
+          name="specialAttack" #name="ngModel" [ngModel]="name.value"/>
           <label class="input-label label-status">SP-Attack:</label>
         </div>
         <div class="input-name status field ">
-          <input type="number" class="input-field" placeholder="Special-defense"/>
+          <input type="number" class="input-field" placeholder="Special-defense"
+          name="specialDefense" #name="ngModel" [ngModel]="name.value"/>
           <label class="input-label label-status">SP-Defense:</label>
         </div>
         <div class="input-name status field status-margin">
-          <input type="number" class="input-field " placeholder="Speed"/>
+          <input type="number" class="input-field " placeholder="Speed"
+          name="speed" #name="ngModel" [ngModel]="name.value"/>
           <label class="input-label label-status">Speed:</label>
         </div>
       </div>
@@ -65,7 +69,7 @@
       <a [routerLink]="['']" class="btn btn-send btn-secondary">
         Voltar
       </a>
-      <button class="btn btn-send btn-secondary">
+      <button class="btn btn-send btn-secondary" >
         Salvar
       </button>
   </form>
