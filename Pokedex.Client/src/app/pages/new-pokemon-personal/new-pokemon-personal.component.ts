@@ -71,13 +71,17 @@ export class NewPokemonPersonalComponent implements OnInit {
       for(let i = 0; i < frm.value.types.length; i++){
         types.push(frm.value.types[i].name);
       }
+      frm.value.types = types
 
-      frm.value.types = types;
+      let image = document.getElementById('image-poke') as HTMLImageElement;
+      frm.value.imageUrl = image.src
       console.log(frm.value);
-    }
-    // this.pokeApiPersonalService.savePokemon(this.newPokemon).subscribe(
-    //   res => res
-    // );
-  }
 
+      this.pokeApiPersonalService.savePokemon(frm.value).subscribe(
+        res => {
+          console.log(res);
+        }
+      );
+    }
+  }
 }

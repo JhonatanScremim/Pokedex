@@ -14,39 +14,39 @@
       [settings]="dropdownSettings"
       [data]="typesPokemon"
       (onSelect)="onItemSelect($event)"
-      name="types" [ngModel]="name.value"></ng-multiselect-dropdown>
+      name="types" #types="ngModel" [ngModel]="types.value"></ng-multiselect-dropdown>
 
 
       <p class="status-text">Status</p>
       <div class="status-info">
         <div class="input-name status field">
           <input type="number" class="input-field" placeholder="Hp"
-          name="hp" #name="ngModel" [ngModel]="name.value"/>
+          name="hp" #hp="ngModel" [ngModel]="hp.value"/>
           <label class="input-label label-status">Hp:</label>
         </div>
         <div class="input-name status field status-margin">
           <input type="number" class="input-field" placeholder="Attack"
-          name="attack" #name="ngModel" [ngModel]="name.value"/>
+          name="attack" #attack="ngModel" [ngModel]="attack.value"/>
           <label class="input-label label-status">Attack:</label>
         </div>
         <div class="input-name status field">
           <input type="number" class="input-field" placeholder="Defense"
-          name="defense" #name="ngModel" [ngModel]="name.value"/>
+          name="defense" #defense="ngModel" [ngModel]="defense.value"/>
           <label class="input-label label-status">Defense:</label>
         </div>
         <div class="input-name status field status-margin">
           <input type="number" class="input-field" placeholder="Special-attack"
-          name="specialAttack" #name="ngModel" [ngModel]="name.value"/>
+          name="specialAttack" #specialAttack="ngModel" [ngModel]="specialAttack.value"/>
           <label class="input-label label-status">SP-Attack:</label>
         </div>
         <div class="input-name status field ">
           <input type="number" class="input-field" placeholder="Special-defense"
-          name="specialDefense" #name="ngModel" [ngModel]="name.value"/>
+          name="specialDefense" #specialDefense="ngModel" [ngModel]="specialDefense.value"/>
           <label class="input-label label-status">SP-Defense:</label>
         </div>
         <div class="input-name status field status-margin">
           <input type="number" class="input-field " placeholder="Speed"
-          name="speed" #name="ngModel" [ngModel]="name.value"/>
+          name="speed" #speed="ngModel" [ngModel]="speed.value"/>
           <label class="input-label label-status">Speed:</label>
         </div>
       </div>
