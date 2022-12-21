@@ -11,6 +11,8 @@ import { PokeApiPersonalService } from 'src/app/service/poke-api-personal.servic
 })
 export class NewPokemonPersonalComponent implements OnInit {
 
+  public modalSuccess: boolean = false;
+
   public typesPokemon: any;
   public dropdownSettings: IDropdownSettings = {
     singleSelection: false,
@@ -26,6 +28,7 @@ export class NewPokemonPersonalComponent implements OnInit {
   constructor(private pokeApiPersonalService: PokeApiPersonalService) { }
 
   ngOnInit(): void {
+    this.modalSuccess = false;
     this.getPokemonType();
   }
 
@@ -80,6 +83,10 @@ export class NewPokemonPersonalComponent implements OnInit {
       this.pokeApiPersonalService.savePokemon(frm.value).subscribe(
         res => {
           console.log(res);
+          this.modalSuccess = true;
+        },
+        error => {
+          alert('Erro');
         }
       );
     }

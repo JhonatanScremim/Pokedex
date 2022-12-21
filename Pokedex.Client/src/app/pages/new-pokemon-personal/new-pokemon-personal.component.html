@@ -75,3 +75,14 @@
   </form>
 </ng-template>
 
+<ng-container *ngIf="modalSuccess">
+  <div class="modal-success">
+    <p>Pokémon salvo com sucesso</p>
+    <button [routerLink]="['']" class="btn-send btn-secondary">
+      Confirmar
+    </button>
+  </div>
+  <div class="overlay"></div>
+</ng-container>
+
+
