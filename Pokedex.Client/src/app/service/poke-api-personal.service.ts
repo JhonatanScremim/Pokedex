@@ -22,4 +22,14 @@ export class PokeApiPersonalService {
       map(res => res)
     )
   }
+
+  public getPokemonType(){
+    return this.httClient.get<any>(`${this.url}PokemonType`).pipe(
+      map(res => res)
+    )
+  }
+
+  public savePokemon(pokemon: any){
+    return this.httClient.post(`${this.url}Pokemon`, pokemon);
+  }
 }

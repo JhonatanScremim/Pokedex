@@ -1,0 +1,88 @@
+<app-poke-header [toggleButton]="false"></app-poke-header>
+
+<ng-template [ngIf]="isLoading">
+  <form class="form" #frm="ngForm" (ngSubmit)="savePokemon(frm)">
+    <div class="basic-info">
+      <div class="input-name field">
+        <input type="input" class="input-field" placeholder="Nome"
+        name="name" #name="ngModel" [ngModel]="name.value"/>
+        <label class="input-label">Nome do pokémon:</label>
+      </div>
+
+      <p class="text-type">Tipo pokémon</p>
+      <ng-multiselect-dropdown class="select-types"
+      [settings]="dropdownSettings"
+      [data]="typesPokemon"
+      (onSelect)="onItemSelect($event)"
+      name="types" #types="ngModel" [ngModel]="types.value"></ng-multiselect-dropdown>
+
+
+      <p class="status-text">Status</p>
+      <div class="status-info">
+        <div class="input-name status field">
+          <input type="number" class="input-field" placeholder="Hp"
+          name="hp" #hp="ngModel" [ngModel]="hp.value"/>
+          <label class="input-label label-status">Hp:</label>
+        </div>
+        <div class="input-name status field status-margin">
+          <input type="number" class="input-field" placeholder="Attack"
+          name="attack" #attack="ngModel" [ngModel]="attack.value"/>
+          <label class="input-label label-status">Attack:</label>
+        </div>
+        <div class="input-name status field">
+          <input type="number" class="input-field" placeholder="Defense"
+          name="defense" #defense="ngModel" [ngModel]="defense.value"/>
+          <label class="input-label label-status">Defense:</label>
+        </div>
+        <div class="input-name status field status-margin">
+          <input type="number" class="input-field" placeholder="Special-attack"
+          name="specialAttack" #specialAttack="ngModel" [ngModel]="specialAttack.value"/>
+          <label class="input-label label-status">SP-Attack:</label>
+        </div>
+        <div class="input-name status field ">
+          <input type="number" class="input-field" placeholder="Special-defense"
+          name="specialDefense" #specialDefense="ngModel" [ngModel]="specialDefense.value"/>
+          <label class="input-label label-status">SP-Defense:</label>
+        </div>
+        <div class="input-name status field status-margin">
+          <input type="number" class="input-field " placeholder="Speed"
+          name="speed" #speed="ngModel" [ngModel]="speed.value"/>
+          <label class="input-label label-status">Speed:</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="image-info">
+      <input id="input-image" class="image-input" type="file" (change)="inputFileChange($event)">
+      <label for="input-image" class="image-label">
+        <img id="image-poke" class="image-poke" src="../../../assets/imgs/upload-image.png" alt="">
+        <div id="start">
+          <i class="fa fa-download" aria-hidden="true"></i>
+          <div id="image-text">Selecione uma imagem</div>
+          <span id="file-upload-btn" class="btn btn-primary">Buscar</span>
+        </div>
+        <div id="response">
+          <div id="messages"></div>
+        </div>
+      </label>
+    </div>
+      <a [routerLink]="['']" class="btn btn-send btn-secondary">
+        Voltar
+      </a>
+      <button class="btn btn-send btn-secondary" >
+        Salvar
+      </button>
+  </form>
+</ng-template>
+
+<ng-container *ngIf="modalSuccess">
+  <div class="modal-success">
+    <p>Pokémon salvo com sucesso</p>
+    <button [routerLink]="['']" class="btn-send btn-secondary">
+      Confirmar
+    </button>
+  </div>
+  <div class="overlay"></div>
+</ng-container>
+
+

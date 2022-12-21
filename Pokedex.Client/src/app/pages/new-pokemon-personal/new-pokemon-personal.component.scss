@@ -1,0 +1,323 @@
+@import "../../../config-scss/rem-calc.scss";
+
+:host{
+
+  --color-light: white;
+  --color-dark: #212121;
+  --color-signal: #fab700;
+
+  --color-background: var(--color-light);
+  --color-text: var(--color-dark);
+  --color-accent: var(--color-signal);
+
+  --size-bezel: .5rem;
+  --size-radius: 4px;
+
+  .form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: rem-calc(1200);
+    margin: 0 auto;
+
+    background: var(--white);
+
+    min-height: rem-calc(500);
+    margin-top: rem-calc(10);
+
+    padding: rem-calc(50) rem-calc(35) rem-calc(30);
+    border-radius: rem-calc(50) rem-calc(50) 0 0;
+  }
+
+  .basic-info{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  //Input Name
+
+  .input-name{
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 80%;
+  }
+
+  .input-group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 50%;
+  }
+
+  .input-field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: rem-calc(20);
+    color: var(--primary-color);
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, var(--secondary-color),var(--primary-color));
+    border-image-slice: 1;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:placeholder-shown ~ .input-label {
+      font-size: 1.3rem;
+      color: var(--secondary-color);
+      cursor: text;
+      top: 20px;
+    }
+  }
+
+  .input-label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #9b9b9b;
+  }
+
+  .input-field:focus {
+    ~ .input-label {
+      position: absolute;
+      top: 0;
+      display: block;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+  }
+  /* reset input */
+  .input-field{
+    &:required,&:invalid { box-shadow:none; }
+  }
+
+  // Select Type
+
+  .multiselect-dropdown{
+    background-color: green($color: #000000);
+  }
+
+  .text-type{
+    color: var(--secondary-color);
+    margin-top: rem-calc(30);
+    font-size: rem-calc(20);
+  }
+
+  .select-group{
+    display: flex;
+  }
+
+    ng-multiselect-dropdown {
+      display: inline-block;
+      width: 70%;
+      color: var(--primary-color);
+      margin-bottom: 0;
+      font-size: rem-calc(17);
+      font-weight: 400;
+      line-height: 1.1;
+      text-align: left;
+      vertical-align: middle;
+      cursor: pointer;
+      border-radius: 4px;
+  }
+
+
+  .second-type{
+    margin-left: 20px;
+  }
+
+  //Status
+
+  .status-text{
+    color: var(--secondary-color);
+    margin-top: rem-calc(30);
+    font-size: rem-calc(20);
+  }
+
+  .status-info{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .status{
+    width: 35%;
+    margin-top: 0px !important;
+  }
+
+  .status-margin{
+    margin-left: 20px;
+  }
+
+  .label-status{
+    font-size: rem-calc(17) !important;
+  }
+
+  // Imagem
+
+  .image-info {
+    margin-top: rem-calc(20);
+    display: block;
+    clear: both;
+    width: 50%;
+    max-width: 50%;
+
+    label {
+      float: left;
+      clear: both;
+      width: 90%;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      background: #fff;
+      border-radius: 7px;
+      border: 3px solid #eee;
+      transition: all .2s ease;
+      user-select: none;
+
+      &:hover {
+        border-color: var(--secondary-color);
+      }
+      &.hover {
+        border: 3px solid var(--secondary-color);
+        box-shadow: inset 0 0 0 6px #eee;
+
+        #start {
+          i.fa {
+            transform: scale(0.8);
+            opacity: 0.3;
+          }
+        }
+      }
+    }
+
+    #start {
+      float: left;
+      clear: both;
+      width: 100%;
+      &.hidden {
+        display: none;
+      }
+      i.fa {
+        font-size: 50px;
+        margin-bottom: 1rem;
+        transition: all .2s ease-in-out;
+      }
+    }
+    #response {
+      float: left;
+      clear: both;
+      width: 100%;
+      &.hidden {
+        display: none;
+      }
+      #messages {
+        margin-bottom: .5rem;
+      }
+    }
+
+    .image-poke {
+      display: inline;
+      margin: 0 auto .5rem auto;
+      width: rem-calc(200) !important;
+      height: rem-calc(200) !important;
+      max-width: 50%;
+      &.hidden {
+        display: none;
+      }
+    }
+
+    progress,
+    .progress {
+      display: inline;
+      clear: both;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 180px;
+      height: 8px;
+      border: 0;
+      border-radius: 4px;
+      background-color: #eee;
+      overflow: hidden;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    div {
+      margin: 0 0 .5rem 0;
+      color: var(--primary-color);
+    }
+    .btn {
+      display: inline-block;
+      margin: .5rem .5rem 1rem .5rem;
+      clear: both;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      text-transform: initial;
+      border: none;
+      border-radius: .2rem;
+      outline: none;
+      padding: 0 1rem;
+      height: 36px;
+      line-height: 36px;
+      color: #fff;
+      transition: all 0.2s ease-in-out;
+      box-sizing: border-box;
+      background: var(--secondary-color);
+      border-color: var(--secondary-color);
+      cursor: pointer;
+    }
+  }
+
+  //Modal
+  .modal-success {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #333;
+    min-width: 320px;
+    position: fixed;
+    left: 50%;
+    padding: 24px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    text-align: center;
+    font-size: rem-calc(30);
+
+    p{
+      padding: rem-calc(20);
+    }
+
+    button{
+      padding: rem-calc(20);
+      cursor: pointer;
+    }
+  }
+
+
+
+  .overlay {
+    background: #000;
+    height: 100vh;
+    left: 0;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+  }
+}

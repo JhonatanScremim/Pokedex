@@ -1,12 +1,18 @@
 
-<div class="toggle" *ngIf="toggleButton">
-  <mat-button-toggle-group>
-    <mat-button-toggle checked (click)="changeOfficialPokedex()"
-      disabled={{isDisabledOfficial}} [disableRipple]="true">Oficial</mat-button-toggle>
-    <mat-button-toggle (click)="changePersonalPokedex()"
-      disabled={{isDisabledPersonal}} [disableRipple]="true">Pessoal</mat-button-toggle>
-  </mat-button-toggle-group>
-</div>
+<div class="header">
+  <div class="toggle" *ngIf="toggleButton">
+    <mat-button-toggle-group>
+      <mat-button-toggle checked (click)="changeOfficialPokedex()"
+        disabled={{isDisabledOfficial}} [disableRipple]="true">Oficial</mat-button-toggle>
+      <mat-button-toggle (click)="changePersonalPokedex()"
+        disabled={{isDisabledPersonal}} [disableRipple]="true">Pessoal</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
 <div class="image-header">
   <img src="assets/imgs/Logo.svg" alt="Logo podedex">
+</div>
+<div class="new-pokemon" *ngIf="personalPokedex">
+  <button class="new-pokemon-btn" [routerLink]="['new-pokemon-personal']">Novo pokémon</button>
+</div>
 </div>
