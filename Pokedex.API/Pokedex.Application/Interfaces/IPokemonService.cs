@@ -8,5 +8,6 @@ namespace Pokedex.Application.Interfaces
         Task<List<PokemonViewModel>> GetAll();
         PokemonViewModel GetById(string id);
         Task Create(PokemonDTO dto);
+        Task Delete(string id);
     }
 }

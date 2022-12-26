@@ -7,5 +7,6 @@ namespace Pokedex.Repository.Interfaces
         Task<List<Pokemon>> GetAll();
         Pokemon? GetById(string id);
         Task Insert(Pokemon pokemon);
+        Task Delete(string id);
     }
 }

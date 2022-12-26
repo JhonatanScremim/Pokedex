@@ -28,5 +28,11 @@ namespace Pokedex.Repository
         {
             await _pokemon.InsertOneAsync(pokemon);
         }
+        
+
+        public async Task Delete(string id)
+        {
+            await _pokemon.DeleteOneAsync(x => x.Id == id);
+        }
     }
 }

@@ -47,7 +47,21 @@ namespace Pokedex.API.Controllers
             try
             {
                 await _pokemonService.Create(dto);
-                return Ok();
+                return Ok("Success");
+            }
+            catch(Exception e)
+            {
+                return BadRequest("Error: " + e);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(string id)
+        {
+            try
+            {
+                await _pokemonService.Delete(id);
+                return Ok("Success");
             }
             catch(Exception e)
             {

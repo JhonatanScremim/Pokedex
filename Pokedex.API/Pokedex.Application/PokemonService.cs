@@ -42,5 +42,10 @@ namespace Pokedex.Application
             var pokemon = _mapper.Map<Pokemon>(dto);
             await _pokemonRepository.Insert(pokemon);
         }
+
+        public async Task Delete(string id)
+        {
+            await _pokemonRepository.Delete(id);
+        }
     }
 }
