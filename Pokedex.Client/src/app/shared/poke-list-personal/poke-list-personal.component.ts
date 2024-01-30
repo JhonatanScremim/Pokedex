@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { PokeApiPersonalService } from 'src/app/service/poke-api-personal.service';
 
 @Component({
@@ -10,7 +11,10 @@ export class PokeListPersonalComponent implements OnInit {
 
   public allPokemons: any;
 
-  constructor(private pokeApiPersonalService: PokeApiPersonalService) { }
+  constructor(
+    private pokeApiPersonalService: PokeApiPersonalService,
+    private location: Location
+    ) { }
 
   ngOnInit(): void {
     this.getPokemons();
@@ -20,8 +24,13 @@ export class PokeListPersonalComponent implements OnInit {
     this.pokeApiPersonalService.getAllPokemon().subscribe(
       res => {
         this.allPokemons = res;
-        console.log(this.allPokemons);
       }
+    )
+  }
+
+  public deletePokemon(id: string){
+    this.pokeApiPersonalService.deletePokemon(id).subscribe(
+      res => res
     )
   }
 

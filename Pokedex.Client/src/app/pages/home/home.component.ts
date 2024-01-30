@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
 
   public toggleClicked(event: any){
     this.personalPokedex = event;
-    console.log(event);
   }
 
 }

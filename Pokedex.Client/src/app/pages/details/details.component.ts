@@ -33,7 +33,6 @@ export class DetailsComponent implements OnInit {
 
     return forkJoin([pokemon, name]).subscribe(
       res => {
-        console.log(res);
         this.pokemon = res;
         this.isLoading = true;
       },

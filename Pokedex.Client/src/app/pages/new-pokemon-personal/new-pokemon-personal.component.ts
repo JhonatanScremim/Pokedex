@@ -37,7 +37,6 @@ export class NewPokemonPersonalComponent implements OnInit {
       res => {
         this.typesPokemon = res;
         this.isLoading = true;
-        console.log(this.typesPokemon);
       }
     )
   }
@@ -47,7 +46,6 @@ export class NewPokemonPersonalComponent implements OnInit {
   }
 
   public inputFileChange(event: any){
-    console.log(event);
     if(event.srcElement.files && event.srcElement.files[0]){
       const photo = event.srcElement.files[0];
 
@@ -78,15 +76,13 @@ export class NewPokemonPersonalComponent implements OnInit {
 
       let image = document.getElementById('image-poke') as HTMLImageElement;
       frm.value.imageUrl = image.src
-      console.log(frm.value);
 
       this.pokeApiPersonalService.savePokemon(frm.value).subscribe(
         res => {
-          console.log(res);
           this.modalSuccess = true;
         },
         error => {
-          alert('Erro');
+          alert('Erro interno no servidor, por favor tente mais tarde');
         }
       );
     }

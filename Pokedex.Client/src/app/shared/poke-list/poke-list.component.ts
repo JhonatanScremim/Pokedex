@@ -30,7 +30,6 @@ export class PokeListComponent implements OnInit {
         this.totalPokemons = res.count;
         this.setAllPokemons = res.results;
         this.allPokemons = this.setAllPokemons;
-        console.log(this.allPokemons);
       },
       error => {
         this.apiError = true;

@@ -28,7 +28,6 @@ export class PokeHeaderComponent implements OnInit {
     this.isDisabledOfficial = false;
     this.personalPokedex = true;
     this.toggleClicked.emit(this.personalPokedex);
-    console.log(this.personalPokedex);
   }
 
   public changeOfficialPokedex(){

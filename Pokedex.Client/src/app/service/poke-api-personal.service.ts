@@ -30,6 +30,10 @@ export class PokeApiPersonalService {
   }
 
   public savePokemon(pokemon: any){
-    return this.httClient.post(`${this.url}Pokemon`, pokemon);
+    return this.httClient.post(`${this.url}Pokemon`, pokemon, {responseType: 'text'});
+  }
+
+  public deletePokemon(id: string){
+    return this.httClient.delete(`${this.url}Pokemon/${id}`);
   }
 }

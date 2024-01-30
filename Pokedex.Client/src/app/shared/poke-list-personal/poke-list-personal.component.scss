@@ -68,10 +68,32 @@
         //centralizar imagem no background
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
 
         img{
           width: rem-calc(140);
+        }
+      }
+
+      &-delete{
+        position: absolute;
+        right: 0;
+        margin-right: rem-calc(10);
+
+        .button-delete{
+          background: none;
+          background-image: url('../../../assets/imgs/trash.png');
+          background-size: rem-calc(30);
+          height: rem-calc(30);
+          width: rem-calc(30);
+          cursor: pointer;
+
+        }
+
+        .button-delete:hover{
+          background-size: rem-calc(35);
+          height: rem-calc(35);
+          width: rem-calc(35);
         }
       }
     }
