@@ -1,2 +1,2 @@
-* linguist-vendored
-*.scss linguist-vendored=true
+$ cat .gitattributes
+*.scss linguist-language=Typescript
